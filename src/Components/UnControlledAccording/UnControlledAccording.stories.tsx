@@ -1,6 +1,4 @@
-import React, {useState} from 'react';
-
-import {action} from "@storybook/addon-actions";
+import React from 'react';
 import UnControlledAccording from "./UnControlledAccording";
 
 
@@ -10,12 +8,8 @@ export default {
     component: UnControlledAccording,
 };
 
-const callBack=action("on or off clicked");
-
-export const collapsed = () => <UnControlledAccording title={"menu"}/>
-export const uncollapsed = () => <UnControlledAccording title={"users"}/>
 export const Changing = () => {
-    const [value, setValue] = useState(true);
+
     return <UnControlledAccording title={"users"}/>
 }
 
