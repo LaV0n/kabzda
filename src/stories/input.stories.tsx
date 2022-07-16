@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {ChangeEvent, useRef, useState} from 'react';
 
 
 export default  {
@@ -27,5 +27,37 @@ export const getValueByButton = () =>{
   )
 }
 
+export const ConrtolledInput = () =>{
+  let [value, setValue]=useState('');
+  const onChange =(e:ChangeEvent<HTMLInputElement>)=>{
+    setValue(e.currentTarget.value);
+  }
+  return (
+      <input onChange={onChange} value={value}/>
+  )
+}
 
+export const ConrtolledCheckbox = () =>{
+  let [value, setValue]=useState(true);
+  const onChange =(e:ChangeEvent<HTMLInputElement>)=>{
+    setValue(e.currentTarget.checked);
+  }
+  return (
+      <input type ="checkbox" onChange={onChange} checked={value}/>
+  )
+}
 
+export const ConrtolledSelect = () =>{
+  let [value, setValue]=useState<string | undefined>('3');
+  const onChange =(e:ChangeEvent<HTMLSelectElement>)=>{
+    setValue(e.currentTarget.value);
+  }
+  return (
+      <select value={value} onChange={onChange}>
+        <option>none</option>
+        <option value={'1'}>Minsk</option>
+        <option value={'2'}>Warsaw</option>
+        <option value={'3'}>Berlin</option>
+        </select>
+  )
+}
