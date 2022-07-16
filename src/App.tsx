@@ -32,7 +32,9 @@ function App() {
             <Rating value={retingValue} onClick ={setRetingValue}/>
             <According title="Menu"
                        collapsed={collapsedAccordion}
-                       onClick ={()=>setCollapsedAccordion(!collapsedAccordion)}/>
+                       onClick ={()=>setCollapsedAccordion(!collapsedAccordion)}
+            items={[]}
+            onClicke={()=>{}}/>
            {/* <According title="Bar" collapsed={false}/>*/}
             Article 2
             {/* eslint-disable-next-line react/jsx-no-undef */}
