@@ -9,6 +9,8 @@ export default  {
 
 export const UncontrolledInput = ()=> <input/>;
 export const ControlledInput = ()=> <input value={"tyt.by"}/>
+/*
+
 export  const TrackingValue = () => {
   let [value, setValue]=useState('');
   return <><input onChange={ (e)=>{
@@ -61,3 +63,4 @@ export const ConrtolledSelect = () =>{
         </select>
   )
 }
+*/
