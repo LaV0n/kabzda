@@ -1,11 +1,20 @@
-import React, {useState} from "react";
+import React, {useReducer, useState} from "react";
 
 type AccordingTitleType = {
     title: string
     onClick:()=>void
-
 }
 
+type ActionType ={
+    type:string
+}
+
+const reducer =(state:boolean,action:ActionType)=>{
+    if (action.type === "TOGGLE-COLLAPSED"){
+        return !state;
+    }
+    return state;
+}
 
 function AccordingTitle(props: AccordingTitleType) {
     return (
@@ -28,10 +37,11 @@ type AccordingType = {
 }
 
 function UnControlledAccording(props: AccordingType) {
-    let [collapsed, setCollapsed] = useState(true);
+    //let [collapsed, setCollapsed] = useState(true);
+    let [collapsed, dispatch] = useReducer(reducer,false);
     return (
         <div>
-            <AccordingTitle title={props.title} onClick={()=>{setCollapsed(!collapsed)}} />
+            <AccordingTitle title={props.title} onClick={()=>{dispatch({type:"TOGGLE-COLLAPSED"})}} />
             {!collapsed && <AccordingBody/>}
         </div>
     )
