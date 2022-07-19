@@ -5,6 +5,8 @@ type RatingType = {
 defaultValue?:RatingValueType
 }
 
+const Star=React.memo(StarSecret)
+
 function UncontrolledRating(props: RatingType) {
     let [value, setValue] = useState<RatingValueType>(props.defaultValue? props.defaultValue : 0)
     return (
@@ -24,7 +26,7 @@ type StarType = {
 
 }
 
-function Star(props: StarType) {
+function StarSecret(props: StarType) {
     return <span onClick={()=>props.setValue()}>
         { props.selected ? <b>star </b> : "star "}
     </span>

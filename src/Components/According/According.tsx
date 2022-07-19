@@ -10,10 +10,13 @@ type AccordingTitleType = {
     onClick:()=> void
 }
 
+const AccordingTitle=React.memo(AccordingTitleSecret)
+const AccordingBody=React.memo(AccordingBodySecret)
 
-function AccordingTitle (props:AccordingTitleType) {
+
+function AccordingTitleSecret (props:AccordingTitleType) {
     return (
-        <h3 onClick={(e)=>props.onClick()}>{props.title}</h3>
+        <h3 onClick={()=>props.onClick()}>{props.title}</h3>
     )
 }
 
@@ -22,7 +25,7 @@ type AccordionBodyType ={
     onClicke: (value:any)=>void
 }
 
-function AccordingBody (props:AccordionBodyType) {
+function AccordingBodySecret (props:AccordionBodyType) {
     return (
         <ul>
             {

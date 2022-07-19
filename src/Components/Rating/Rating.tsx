@@ -6,6 +6,9 @@ export type RatingType ={
     value:RatingValueType
     onClick:(value:RatingValueType) => void
 }
+
+const Star=React.memo(StarSecret)
+
 function Rating (props:RatingType) {
     return (
         <div>
@@ -24,7 +27,7 @@ type StarType = {
     onClick:(value:RatingValueType) => void
     value:RatingValueType
 }
-function Star (props:StarType) {
+function StarSecret (props:StarType) {
 return <span onClick={()=>props.onClick(props.value)}> {props.selected ? <b>star </b> : "star "}</span>
 }
 export default Rating

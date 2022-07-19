@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from "react";
+import React, {useReducer} from "react";
 
 type AccordingTitleType = {
     title: string
@@ -9,6 +9,9 @@ type ActionType ={
     type:string
 }
 
+const AccordingTitle=React.memo(AccordingTitleSecret)
+const AccordingBody=React.memo(AccordingBodySecret)
+
 const reducer =(state:boolean,action:ActionType)=>{
     if (action.type === "TOGGLE-COLLAPSED"){
         return !state;
@@ -16,13 +19,13 @@ const reducer =(state:boolean,action:ActionType)=>{
     return state;
 }
 
-function AccordingTitle(props: AccordingTitleType) {
+function AccordingTitleSecret(props: AccordingTitleType) {
     return (
             <h3 onClick={()=>{props.onClick()}}>{props.title}</h3>
     )
 }
 
-function AccordingBody() {
+function AccordingBodySecret() {
     return (
         <ul>
             <li>1</li>
