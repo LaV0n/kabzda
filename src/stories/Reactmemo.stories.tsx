@@ -20,7 +20,7 @@ const UsersSecret = (props: { users: Array<string> }) => {
 const Users=React.memo(UsersSecret);
 const NewMessageCounter=React.memo(NewMessageCounterSecret);
 
-
+/*
 export const example = () => {
     const [counter,setCounter]=useState(0);
     const [users,setUsers]=useState(["first", "second", "third"])
@@ -35,4 +35,4 @@ export const example = () => {
         <NewMessageCounter count={counter}/>
         <Users users={users}/>
     </>
-}
+}*/
