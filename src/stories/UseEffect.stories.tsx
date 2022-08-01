@@ -33,4 +33,25 @@ export const Example1 = () =>{
 
     </>
 }
+export const Example2 = () =>{
+    console.log('example2');
 
+    const [time,setTime]=useState(new Date().getTime());
+
+
+    //setTimeout(()=>document.title=counter.toString(),2000)
+
+    useEffect(()=>{
+        setInterval(()=>(setTime((state:number)=>state+1)),1000)
+    },[])
+
+
+    console.log(new Date(time).toLocaleTimeString())
+    return <>
+        time hell to, {new Date(time).toLocaleTimeString()}
+      {/*  <button onClick={()=>setCounter(counter+1)}>counter</button>
+        <button onClick={()=>setFake(fake+1)}>fake</button>*/}
+
+
+    </>
+}
